@@ -58,9 +58,9 @@ function mousePressed() {
 }
 
 function draw() {
-    background(127)
+    background(255)
     }
-    face.push(new base())
+
 }
 
 
