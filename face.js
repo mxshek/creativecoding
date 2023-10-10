@@ -60,7 +60,7 @@ function mousePressed() {
 function draw() {
     background(127)
     }
-
+    face.push(new base())
 }
 
 
