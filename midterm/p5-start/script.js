@@ -21,8 +21,8 @@ class Art{
   }
 
   update() {
-    this.h = this.h + .003
-    this.y = this.y + .003
+    this.h = this.h + .009
+    this.y = this.y + .009
   }
 
 }
@@ -117,15 +117,13 @@ update() {
 }
 
  function keyPressed() {
-  if(keyCode === 32 
-    && frameCount > 1400
-    ) {
+  if(keyCode === 32 && frameCount > 1300) {
     let w = new Wiper(random(0, 600), random(0,600), 20, 75);
     painting.push(w)
   }
 }
 function mousePressed() {
-  if(frameCount > 1400) {
+  if(frameCount > 1300) {
   let r = random(50, 250);
   let s = new Art(mouseX, mouseY, r, r);
   painting.push(s)
@@ -209,7 +207,7 @@ if(frameCount > 1000 && frameCount < 1300) {
   text('press SPACE to erase', 300, 325)
 }
 
-if(frameCount > 1400) {
+if(frameCount > 1300) {
   bg = [255, 255, 255]
 
 //for polymorphism help, referred to polymorphism in javascript youtube video
@@ -241,16 +239,19 @@ let t = 'Classical Master'
 let d = 'Globs of mismatched paint.'
 let e = 'Brushstrokes in drunken stupor.' 
 let f = 'Resonating view.'
+let g = 'ms'
 fill(255)
 textAlign(LEFT)
 textSize(28);
-textStyle(BOLD)
+textStyle(BOLD);
 text(t, 190, 240);
 textSize(18);
-textStyle(NORMAL)
+textStyle(NORMAL);
 text(d, 190, 300);
 text(e, 190, 325);
-text(f, 190, 350)
+text(f, 190, 350);
+textStyle(ITALIC);
+text(g, 190, 400)
 }
 
 
