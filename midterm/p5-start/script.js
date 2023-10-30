@@ -21,7 +21,8 @@ class Art{
   }
 
   update() {
-    this.h = this.h + .02
+    this.h = this.h + .003
+    this.y = this.y + .003
   }
 
 }
@@ -52,12 +53,12 @@ class Paintball extends Art{
 //reintroducing array to create subsplatters (learned in office hours)
 //this array will determine how many subsplatters we have
 this.splatter = []
-this.randTheta = random(360);
+this.randTheta = random(0, 360);
 this.a = random(0.25, 0.33) * this.h
 
 
 for(let i = 0; i < 10; i++){
-randTheta = random(360);
+randTheta = random(0,360);
 r = random(0.25, 0.33);
 this.a = this.x + (cos(this.randTheta)*this.w)/2;
 this.b = this.y + (sin(this.randTheta)*this.w)/2;
@@ -79,7 +80,10 @@ display() {
     angleMode(DEGREES)
     ellipse(this.a, this.b, this.c, this.d)
   }
+
+  
 }
+// }
 
 update() {
   super.update()
@@ -114,19 +118,19 @@ update() {
 
  function keyPressed() {
   if(keyCode === 32 
-    // && frameCount > 1400
+    && frameCount > 1400
     ) {
     let w = new Wiper(random(0, 600), random(0,600), 20, 75);
     painting.push(w)
   }
 }
 function mousePressed() {
-  // if(frameCount > 1400) {
+  if(frameCount > 1400) {
   let r = random(50, 250);
-  let s = new Paintball(mouseX, mouseY, r, r);
+  let s = new Art(mouseX, mouseY, r, r);
   painting.push(s)
 }
-// }
+}
 
 function setup() {
   createCanvas(600, 600)
@@ -162,50 +166,50 @@ background(bg)
 //greet user, invite to center themselves, reveal instructions
 //'insert text'
 //note for miya - 300 frames is about 10 sec
-// if(frameCount > 100 && frameCount < 300) {
-//   bg = [115, 215, 255]  
-//   fill(255)
-//   textSize(36)
-//   textAlign(CENTER)
-//   text('welcome', 300, 300)
-// }
+if(frameCount > 100 && frameCount < 300) {
+  bg = [115, 215, 255]  
+  fill(255)
+  textSize(36)
+  textAlign(CENTER)
+  text('welcome', 300, 300)
+}
 
-// if(frameCount > 300 && frameCount < 500) {
-//   bg = [145, 224, 255]
-//   fill(255)
-//   textSize(36)
-//   textAlign(CENTER)
-//   text('take a breath', 300, 300)
-// }
+if(frameCount > 300 && frameCount < 500) {
+  bg = [145, 224, 255]
+  fill(255)
+  textSize(36)
+  textAlign(CENTER)
+  text('take a breath', 300, 300)
+}
 
-// if(frameCount > 500 && frameCount < 700) {
-//   bg = [165, 229, 255]
-//   fill(255)
-//   textSize(36)
-//   textAlign(CENTER)
-//   text('exhale', 300, 300)
-// }
+if(frameCount > 500 && frameCount < 700) {
+  bg = [165, 229, 255]
+  fill(255)
+  textSize(36)
+  textAlign(CENTER)
+  text('exhale', 300, 300)
+}
 
-// if(frameCount > 700 && frameCount < 1000) {
-//   bg = [185, 235, 255]
-//   fill(255)
-//   textSize(36)
-//   textAlign(CENTER)
-//   text('you are exactly', 300, 275)
-//   text('as you are meant to be', 300, 325)
+if(frameCount > 700 && frameCount < 1000) {
+  bg = [185, 235, 255]
+  fill(255)
+  textSize(36)
+  textAlign(CENTER)
+  text('you are exactly', 300, 275)
+  text('as you are meant to be', 300, 325)
 
-// }
+}
 
-// if(frameCount > 1000 && frameCount < 1300) {
-//   bg = [225, 246, 255]
-//   fill(200)
-//   textSize(36)
-//   textAlign(CENTER)
-//   text('CLICK to create', 300, 275)
-//   text('press SPACE to erase', 300, 325)
-// }
+if(frameCount > 1000 && frameCount < 1300) {
+  bg = [225, 246, 255]
+  fill(200)
+  textSize(36)
+  textAlign(CENTER)
+  text('CLICK to create', 300, 275)
+  text('press SPACE to erase', 300, 325)
+}
 
-// if(frameCount > 1400) {
+if(frameCount > 1400) {
   bg = [255, 255, 255]
 
 //for polymorphism help, referred to polymorphism in javascript youtube video
@@ -254,7 +258,7 @@ text(f, 190, 350)
 
 
 
-// }
+}
 
 
 
