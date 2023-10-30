@@ -28,24 +28,63 @@ class Art{
 
 //create class for paintballs
 // click to launch paint
+//NO LONGER NEED INDIVIDUAL ARRAYS BC ALL IN ONE CLASS 
 // let splatter = []
+
+let splatter = []
+let randTheta
+let a
+let r 
+
+
+
 class Paintball extends Art{
   constructor(_x, _y, _w, _h){
     super(_x, _y, _w, _h);
+    //BELOW NOTATION WAS RETURNING ERROR. REFERRED TO JAVASCRIPT CLASSES #5 POLYMORPHISM FOR CORRECT NOTATION
+    //https://www.youtube.com/watch?v=YkhLw5tYR6c
     // super.x = _x;
     // super.y = _y;
     // super.w = _w;
     // super.h = _h;
     // super.color = [random(0,255), random(0,255), random(0,255)]
+
+//reintroducing array to create subsplatters (learned in office hours)
+//this array will determine how many subsplatters we have
+this.splatter = []
+this.randTheta = random(360);
+this.a = random(0.25, 0.33) * this.h
+
+
+for(let i = 0; i < 10; i++){
+randTheta = random(360);
+r = random(0.25, 0.33);
+this.a = this.x + (cos(this.randTheta)*this.w)/2;
+this.b = this.y + (sin(this.randTheta)*this.w)/2;
+this.c = r * this.w;
+this.d = r * this.h
+}
 }
 
-// display() {
-//   fill(super.color)
-//   noStroke()
-//   ellipse(super.x, super.y, super.w, super.h)
-// }
+display() {
+  super.display()
 
+  //test to debug since splatters aren't showing
+  // rect(60, 60, 60, 60) does show up so I know nothing is wrong with my draw/display function
+  // for(let i = 0; i < 10; i++){
+  //   rect(this.x,this.y,60,60)}
+  // nothing is wrong w for loop or this.x/y notation? rectangle is still drawn within for loop
 
+  for(let i = 0; i < 10; i++){
+    angleMode(DEGREES)
+    ellipse(this.a, this.b, this.c, this.d)
+  }
+}
+
+update() {
+  super.update()
+  this.d = this.d + .02
+}
 }
 
 //create class for wiper
@@ -66,7 +105,7 @@ class Wiper extends Art{
 
 //overriding update
 update() {
-  if(this.x > 300) {
+  if(this.x < 300) {
     this.w = this.w + 10
   } else {this. w = this.w - 10}
 }
@@ -74,20 +113,25 @@ update() {
 }
 
  function keyPressed() {
-  if(keyCode === 32) {
-    let w = new Wiper(random(0, 600), random(0,600), 20, 50);
+  if(keyCode === 32 
+    // && frameCount > 1400
+    ) {
+    let w = new Wiper(random(0, 600), random(0,600), 20, 75);
     painting.push(w)
   }
 }
 function mousePressed() {
+  // if(frameCount > 1400) {
   let r = random(50, 250);
   let s = new Paintball(mouseX, mouseY, r, r);
   painting.push(s)
-} 
+}
+// }
 
 function setup() {
   createCanvas(600, 600)
 
+//debugging - did not need this and it was breaking code
 // for (let i = 0; i = painting.length; i++) {
 //   if (mousePressed) { 
 //   //debugging process, not working, let's add console.log
@@ -162,9 +206,18 @@ background(bg)
 // }
 
 // if(frameCount > 1400) {
-//   bg = [255, 255, 255]
+  bg = [255, 255, 255]
 
-//create for loop for paintball class to click to launch paint 
+//for polymorphism help, referred to polymorphism in javascript youtube video
+//link https://www.youtube.com/watch?v=8a5BkwuZRK0
+  for (let p of painting) {
+    p.update();
+    p.display()
+  }
+
+
+//OLD METHOD - REMOVED NOW THAT WE HAVE PARENT CLASS
+// create for loop for paintball class to click to launch paint 
 // for(let i = 0; i < splatter.length; i++) {
 //   splatter[i].display(); 
 // }
@@ -174,10 +227,10 @@ background(bg)
 // }
 
 //try parent class notation
-for (let p of painting) {
-  p.update();
-  p.display()
-}
+// for (let p of painting) {
+//   p.update();
+//   p.display()
+// }
 
 // write poem in white
 let t = 'Classical Master'
