@@ -1,7 +1,8 @@
 let bg = [0, 0, 0]
 let currentTemp
+let x
 
-conversation = []
+let questionArr = []
 
 //class for questions?
 class Question{
@@ -13,24 +14,31 @@ class Question{
 
   display() {
     text(this.name, this.x, this.y)
-    textAlign(CENTER, CENTER)
+    textAlign(CENTER)
     textSize(32)
-    
+
   }
 
 }
+
 
 setTimeout(
   function() {
     console.log("does this work")
     bg = [100, 100, 100]
     //create new text class and then push array? 
+    let x = "test"
+    questionArr.push()
   }, 2000
 )
 
 function setup() {
   createCanvas(600, 600)
   apiRequest()
+
+  for (let i = 0; i < questionArr.length; i++) {
+    questionArr[i] = new Question(x, 300, 200)
+  }
 }
 
 function draw() {
@@ -49,6 +57,11 @@ background(bg)
   fill(255, 0 , 255)
   textSize(32)
   text('no', 350, 350)
+
+  //trying to add a new object
+  for (let i = 0; i < questionArr.length; i++){
+    questionArr[i].display
+  }
 
   // console.log(frameCount)
 
