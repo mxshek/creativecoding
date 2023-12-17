@@ -15,6 +15,92 @@ let currentTemp;
 
 let bg = [0, 0, 0];
 
+let images;
+let imageIndex = 0;
+let i;
+
+function preload(){
+  images = [
+    //hi
+    loadImage('convo/Untitled_Artwork-1.png'),
+    //hi next
+    loadImage('convo/Untitled_Artwork-2.png'),
+    //it's nice to meet you
+    loadImage('convo/Untitled_Artwork-3.png'),
+    // it's nice to meet you :)
+    loadImage('convo/Untitled_Artwork-4.png'),
+    // it's nice to meet you :) next
+    loadImage('convo/Untitled_Artwork-5.png'),
+    // how are you feeling?
+    loadImage('convo/Untitled_Artwork-6.png'),
+    // how are you feeling, hold hand over
+    loadImage('convo/Untitled_Artwork-7.png'),
+    // ^^ next
+    loadImage('convo/Untitled_Artwork-8.png'),
+    // i see i feel you aura, keep still
+    loadImage('convo/Untitled_Artwork-9.png'),
+    // ^^ thanks
+    loadImage('convo/Untitled_Artwork-10.png'),
+    // ^^ thanks, next
+    loadImage('convo/Untitled_Artwork-11.png'),
+    // done! amazing. your aura is loading
+    loadImage('convo/Untitled_Artwork-12.png'),
+    // ^^. 
+    loadImage('convo/Untitled_Artwork-13.png'),
+    // ^^ ..
+    loadImage('convo/Untitled_Artwork-14.png'),
+    // ^^ ...
+    loadImage('convo/Untitled_Artwork-15.png'),
+    // your aura is red
+    loadImage('convo/Untitled_Artwork-16.png'),
+    // red did i get that right
+    loadImage('convo/Untitled_Artwork-17.png'),
+    //REMOVED 18, NUMBER IN ARRAY IS NOW -2
+    // orange aura
+    loadImage('convo/Untitled_Artwork-19.png'),
+    // orange aura right?
+    loadImage('convo/Untitled_Artwork-20.png'),
+    // yellow aura
+    loadImage('convo/Untitled_Artwork-21.png'),
+    // yellow aura right?
+    loadImage('convo/Untitled_Artwork-22.png'),
+    // green aura
+    loadImage('convo/Untitled_Artwork-23.png'),
+    // green aura right?
+    loadImage('convo/Untitled_Artwork-24.png'),
+    // blue aura
+    loadImage('convo/Untitled_Artwork-25.png'),
+    // blue aura right?
+    loadImage('convo/Untitled_Artwork-26.png'),
+    // purple aura
+    loadImage('convo/Untitled_Artwork-27.png'),
+    // purple aura right?
+    loadImage('convo/Untitled_Artwork-28.png'),
+    // im so glad! next
+    loadImage('convo/Untitled_Artwork-29.png'),
+    // oh im so sorry next
+    loadImage('convo/Untitled_Artwork-30.png'),
+    // this is the weather in nyc day
+    loadImage('convo/Untitled_Artwork-31.png'),
+    // this is the weather in nyc night
+    loadImage('convo/Untitled_Artwork-32.png'),
+    // is this affecting your energy?
+    loadImage('convo/Untitled_Artwork-33.png'),
+    // i see weather always affects my mood
+    loadImage('convo/Untitled_Artwork-34.png'),
+    // ... 
+    loadImage('convo/Untitled_Artwork-35.png'),
+    // ... next
+    loadImage('convo/Untitled_Artwork-36.png'),
+    // can i ask you a question
+    loadImage('convo/Untitled_Artwork-37.png'),
+    // ah i see would you reconsider?
+    loadImage('convo/Untitled_Artwork-38.png'),
+    // thanks it means a lot
+    loadImage('convo/Untitled_Artwork-39.png'),
+  ]
+}
+
 function setup() {
   createCanvas(1400, 700)
   //object will let us read to the bluetooth and write to it as well
@@ -39,220 +125,64 @@ function draw() {
   background(bg)
 
   //testing bluetooth
-if (buttonValue > 0) {
-  bg = [255, 255, 255]
-} else {
-  bg = [0, 0, 0]
-}
+// if (buttonValue > 0) {
+//   bg = [255, 255, 255]
+// } else {
+//   bg = [0, 0, 0]
+// }
 
-if (buttontwoValue > 0) {
-  bg = [128, 255, 255]
-} else {
-  bg = [0, 0, 0]
-}
+// if (buttontwoValue > 0) {
+//   bg = [128, 255, 255]
+// } else {
+//   bg = [0, 0, 0]
+// }
 
+
+
+//what is being shown on screen
+image (images[imageIndex], 0, 0)
+
+if (imageIndex = [number]) {
 fill(photoValue, 150, 198)
-ellipse(300, 300, 200)
+ellipse(1050, 450, 350)
+}
 
 }
+
+//realized framecount will not work as it puts answering on a timeline. going to try image preloading. also think image preloading will look better design wise 
+// took inspiration from https://www.youtube.com/watch?v=LKIywVLGXcw p5.js Image Sequence youtube video 
+// and stack overflow tutorial https://stackoverflow.com/questions/66549075/in-p5-js-is-it-possible-to-load-a-gif-in-the-setup-or-preload-function-and-the 
+function newQuestion () {
+  imageIndex++;
+  if(imageIndex > images.length - 1) {
+    imageIndex = 0
+  }
+}
+
+function specQuestion() {
+  imageIndex = i
+}
+
+function mouseClicked() {
+  newQuestion();
+}
+
+function greenPress () {
+  if (buttonValue > 0) {
+    //see if this works
+    console.log("green button functional")
+
+    newQuestion();
+}}
+
+function redPress () {
+  if (buttontwoValue > 0){
+    //see if this works
+    console.log("red button functional")
   
-//   //HOW ARE YOU FEELING
-//   if(frameCount > 100 && frameCount < 300) { 
-//     bg = [0, 0, 100]
-//     fill(255)
-//     textSize(36)
-//     textAlign(CENTER)
-//     text('How are you feeling? Hold your hand over the sensor.', width/2, width/2)}
+  newQuestion();
+  }}
 
-//     if(frameCount > 300 && frameCount < 550) { 
-//         bg = [0, 0, 0]
-//         fill(225)
-//         textSize(32)
-//         textAlign(CENTER)
-//         text('I see. I feel your aura. Please keep still', width/2, 150)
-//         //make a more dynamic color using chroma library
-//         fill(photoValue, 30, 45);
-//         ellipse(width / 2, height / 2, 300)}
-
-//         if(frameCount > 550 && frameCount < 700) { 
-//             bg = [0, 0, 0]
-//             fill(255)
-//             textSize(36)
-//             textAlign(CENTER)
-//             text('Done! Amazing.', width/2, height/2)}
-
-//         //pull from custom aura api??
-//         if(frameCount > 700 && frameCount < 900) { 
-//         bg = [0, 0, 0]
-//         fill(255)
-//         textSize(36)
-//         textAlign(CENTER)
-//         text('Your energy is []', width/2, width/2)}
-
-//         if(frameCount > 700 && frameCount < 900) { 
-//             bg = [0, 0, 0]
-//             fill(255)
-//             textSize(36)
-//             textAlign(CENTER)
-//             text('Did I get that right?', width/2, width/2)
-
-//             // YES OPTION
-//             if (buttonValue > 0) {
-//                 bg = [10, 10, 10]
-//                 textSize(36)
-//                 textAlign(CENTER)
-//                 text('I am so glad!', 300, 300)
-
-//                 } else { 
-//                     //show green button
-//                     rectMode(CENTER)
-//                     rect(200, 400, 100, 50)
-//                     textSize(32)
-//                     text('yes', 150, 350)
-//                     fill(0, 255, 0)
-                
-//                 }
-
-//                 //NO OPTION
-//                 if (buttontwoValue > 0) {
-//                     bg = [230, 230, 230]
-//                     textSize(36)
-//                     textAlign(CENTER)
-//                     text('I am so sorry!', 300, 300)
-
-//                 } else { 
-//                 //show red button
-//                 rectMode(CENTER)
-//                 rect(400, 400, 100, 50)
-//                 textSize(32)
-//                 text('no', 350, 350)
-//                 fill(255, 0 , 0)
-//     }
-//   }
-
-//   //THIS IS THE WEATHER IN NYC
-//   if(frameCount > 900 && frameCount < 1100) {
-//     bg = [0, 0, 0]
-//     fill(255)
-//     textSize(36)
-//     textAlign(CENTER)
-//     text('This is the weather right now in New York City.', 300, 300)
-//     if (currentTemp != undefined) {
-//         for(let i = 0; i < currentTemp.length; i++){
-//             //display weather
-//             text(currentTemp, 300, 450)
-//         }
-//       }
-//   }
-  
-//   if(frameCount > 1100 && frameCount < 1300) {
-//     bg = [0, 0, 0]
-//             fill(255)
-//             textSize(36)
-//             textAlign(CENTER)
-//             text('Is this affecting your energy?', width/2, width/2)
-
-//             // YES OPTION
-//             if (buttonValue > 0) {
-//                 bg = [10, 10, 10]
-//                 textSize(36)
-//                 textAlign(CENTER)
-//                 text('I see! Weather always affects my mood.', 300, 300)
-
-//                 } else { 
-//                     //show green button
-//                     rectMode(CENTER)
-//                     rect(200, 400, 100, 50)
-//                     textSize(32)
-//                     text('yes', 150, 350)
-//                     fill(0, 255, 0)
-//                 }
-
-//                 //NO OPTION
-//                 if (buttontwoValue > 0) {
-//                     bg = [230, 230, 230]
-//                     textSize(36)
-//                     textAlign(CENTER)
-//                     text('I see! Weather always affects my mood.', 300, 300)
-
-//                 } else { 
-//                 //show red button
-//                 rectMode(CENTER)
-//                 rect(400, 400, 100, 50)
-//                 textSize(32)
-//                 text('no', 350, 350)
-//                 fill(255, 0 , 0)
-//                 }
-  
-//   //can i ask you a question
-//   if(frameCount > 1300 && frameCount < 1500) {
-//     bg = [0, 0, 0]
-//     fill(255)
-//     textSize(36)
-//     textAlign(CENTER)
-//     text('...', 300, 300)
-//   }
-  
-  
-//   if(frameCount > 1500 && frameCount < 1700) {
-//     bg = [0, 0, 0]
-//     fill(255)
-//     textSize(36)
-//     textAlign(CENTER)
-//     text('Can I ask you a question?', 300, 300)
-
-//         // YES OPTION
-//         if (buttonValue > 0) {
-//             bg = [10, 10, 10]
-//             textSize(36)
-//             textAlign(CENTER)
-//             text('Thank you. It means a lot.', 300, 300)
-
-//             } else { 
-//                 //show green button
-//                 rectMode(CENTER)
-//                 rect(200, 400, 100, 50)
-//                 textSize(32)
-//                 text('yes', 150, 350)
-//                 fill(0, 255, 0)
-            
-//             }
-
-//             //NO OPTION
-//             if (buttontwoValue > 0) {
-//                 bg = [230, 230, 230]
-//                 textSize(36)
-//                 textAlign(CENTER)
-//                 text('Ah, I see... Would you reconsider?', 300, 300)
-
-//             } else { 
-//             //show red button
-//             rectMode(CENTER)
-//             rect(400, 400, 100, 50)
-//             textSize(32)
-//             text('no', 350, 350)
-//             fill(255, 0 , 0)
-// }
-//   }
-  
-  
-//   if(frameCount > 1300) {
-//   }  
-
-//     if (buttonValue > 0) {
-//     background(126)
-//   } else { 
-//     background(0)
-//   }
-
-
-  // fill(255, 30, 45);
-  // ellipse(width / 2, height / 2, 100)
-
-
-
-// }}
-// }
 
 function connectToBLE() {
   myBLE.connect(serviceUuid, gotCharacteristics)
@@ -293,6 +223,7 @@ function gotbuttontwoValue(error, value) {
 
 //getting bluetooth error that photovalue has error
 //after commenting out, bluetooth is functional. something wrong with photovalue function
+//restarted it, bluetooth is now working DO NOT NEED SERIAL OPEN
 
 function gotPhotoValue(error, value) {
   if (error) console.error(error)
