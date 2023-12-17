@@ -17,7 +17,6 @@ let bg = [0, 0, 0];
 
 let images;
 let imageIndex = 0;
-let i;
 
 function preload(){
   images = [
@@ -98,8 +97,21 @@ function preload(){
     loadImage('convo/Untitled_Artwork-38.png'),
     // thanks it means a lot
     loadImage('convo/Untitled_Artwork-39.png'),
+    //do you know what it means to be human
+    loadImage('convo/Untitled_Artwork-40.png'),
+    //to be human is to put another's happiness over your own
+    loadImage('convo/Untitled_Artwork-41.png'),
+    //oh good i got it right
+    loadImage('convo/Untitled_Artwork-42.png'),
+    //i still wanted to make you happy
+    loadImage('convo/Untitled_Artwork-43.png'),
+    // thank you for being human
+    loadImage('convo/Untitled_Artwork-44.png'),
+    //say it to yourself
+    loadImage('convo/Untitled_Artwork-45.png'),
   ]
 }
+
 
 function setup() {
   createCanvas(1400, 700)
@@ -137,51 +149,80 @@ function draw() {
 //   bg = [0, 0, 0]
 // }
 
+//testing buttons
+//buttons work when in draw function 
 
+//DEBUGGING = WORKS WHEN YOU PRESS BUTTON, BUT SKIPS AHEAD. 
+// use variables 
+if (buttonValue > 0) {
+  console.log("green button functional in draw")
+  imageIndex++;
+  // if(imageIndex > images.length - 1) {
+  //   imageIndex = 0
+  // }
+} 
+
+if (buttontwoValue > 0) {
+  console.log("red button functional in draw")
+  imageIndex++;
+  // if(imageIndex > images.length - 1) {
+  //   imageIndex = 0
+  // }
+} 
 
 //what is being shown on screen
 image (images[imageIndex], 0, 0)
 
-if (imageIndex = [number]) {
-fill(photoValue, 150, 198)
-ellipse(1050, 450, 350)
-}
+// need to show for [5-10]
+// for (let i = 5; i < 11; i++) {
+// imageIndex = i
+// fill(photoValue, 150, 198)
+// noStroke()
+// ellipse(1050, 450, 350)
+// }
+
+// testing writing temperature 
+// this works
+// fill (0, 0, 0)
+// textAlign(CENTER)
+// textSize (64)
+// text(currentTemp, 700, 475)
 
 }
 
 //realized framecount will not work as it puts answering on a timeline. going to try image preloading. also think image preloading will look better design wise 
 // took inspiration from https://www.youtube.com/watch?v=LKIywVLGXcw p5.js Image Sequence youtube video 
 // and stack overflow tutorial https://stackoverflow.com/questions/66549075/in-p5-js-is-it-possible-to-load-a-gif-in-the-setup-or-preload-function-and-the 
-function newQuestion () {
-  imageIndex++;
-  if(imageIndex > images.length - 1) {
-    imageIndex = 0
-  }
-}
+// function newQuestion () {
+//   imageIndex++;
+//   if(imageIndex > images.length - 1) {
+//     imageIndex = 0
+//   }
+// }
 
-function specQuestion() {
-  imageIndex = i
-}
+// function specQuestion() {
+//   imageIndex = i
+// }
 
-function mouseClicked() {
-  newQuestion();
-}
+// function mouseClicked() {
+//   newQuestion();
+// }
 
-function greenPress () {
-  if (buttonValue > 0) {
-    //see if this works
-    console.log("green button functional")
+// function greenPress () {
+//   if (buttonValue > 0) {
+//     //see if this works
+//     console.log("green button functional")
 
-    newQuestion();
-}}
+//     newQuestion();
+// }}
 
-function redPress () {
-  if (buttontwoValue > 0){
-    //see if this works
-    console.log("red button functional")
+// function redPress () {
+//   if (buttontwoValue > 0){
+//     //see if this works
+//     console.log("red button functional")
   
-  newQuestion();
-  }}
+//   newQuestion();
+//   }}
 
 
 function connectToBLE() {
