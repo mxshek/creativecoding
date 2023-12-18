@@ -244,10 +244,11 @@ if (imageIndex === 2) {
 
    //we are at imageindex 11
    if (imageIndex === 10 && buttonValue === 1) {
+    setTimeout( function() {  
     for(let i = 10; i < 12; i++){
       imageIndex = i
     }
-   }
+   }, 2000)}
 
 
    if (imageIndex === 10) {
@@ -279,13 +280,15 @@ if (imageIndex === 2) {
 
 
    if (imageIndex === 14 && buttonValue === 1) {
+    setTimeout( function() {  
+
     // from here we have to randomly select an aura
     // must randomly route to 15, 18, 20, 22, 24, or 26
     for(let i = 0; i < 2; i++){
     let auraArray = [15, 18, 20, 22, 24, 26]
     let selection = random(auraArray)
     imageIndex = selection
-   }}
+  }}, 2000)}
 
    //IF RED
    if (imageIndex === 15) {
@@ -295,18 +298,21 @@ if (imageIndex === 2) {
    }
 
    if(imageIndex === 16 && buttonValue === 1){
+    setTimeout( function() {  
     for(let i = 16; i < 29; i+= 11){
       //yes image index is 28
       imageIndex = i
     }
-   }
+   }, 2000)}
 
    if(imageIndex === 16 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 16; i < 30; i+=13){
       //no image index is 29
       imageIndex = i
     }
-   }
+  }, 2000)}
 
 
    //IF ORANGE
@@ -317,18 +323,23 @@ if (imageIndex === 2) {
    }
 
    if(imageIndex === 19 && buttonValue === 1){
+    setTimeout( function() {  
+
     for(let i = 19; i < 29; i+=8){
       //yes image index is 28
       imageIndex = i
     }
-   }
+  }, 2000)}
 
    if(imageIndex === 19 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 19; i < 30; i+=10){
       //no image index is 29
       imageIndex = i
     }
-   }
+  }, 2000)}
+
 
 
    //IF YELLOW
@@ -337,20 +348,27 @@ if (imageIndex === 2) {
       imageIndex = i
     }}, 2000)
    }
+   
 
    if(imageIndex === 21 && buttonValue === 1){
+    setTimeout( function() {  
+
     for(let i = 21; i < 29; i+=6){
       //yes image index is 28
       imageIndex = i
     }
-   }
+  }, 2000)}
+
 
    if(imageIndex === 21 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 21; i < 30; i+=8){
       //no image index is 29
       imageIndex = i
     }
-   }
+  }, 2000)}
+
 
 
    //IF GREEN
@@ -361,17 +379,21 @@ if (imageIndex === 2) {
    }
 
    if(imageIndex === 23 && buttonValue === 1){
+    setTimeout( function() {  
+
     for(let i = 23; i < 29; i+=4){
       imageIndex = i
     }
-   }
+  }, 2000)}
 
    if(imageIndex === 23 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 23; i < 30; i+=6){
       //no image index is 29
       imageIndex = i
     }
-   }
+  }, 2000)}
 
    //IF BLUE
    if (imageIndex === 24) {
@@ -381,18 +403,22 @@ if (imageIndex === 2) {
    }
 
    if(imageIndex === 25 && buttonValue === 1){
+    setTimeout( function() {  
+
     for(let i = 25; i < 29; i+=2){
       //yes image index is 28
       imageIndex = i
     }
-   }
+  }, 2000)}
 
    if(imageIndex === 25 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 25; i < 30; i+=4){
       //no image index is 29
       imageIndex = i
     }
-   }
+  }, 2000)}
 
 
    //IF PURPLE
@@ -403,17 +429,23 @@ if (imageIndex === 2) {
    }
 
    if(imageIndex === 27 && buttonValue === 1){
+    setTimeout( function() {  
+
     for(let i = 27; i < 29; i++){
       //yes image index is 28
       imageIndex = i
     }
-   }
+  }, 2000)}
+
 
    if(imageIndex === 27 && buttontwoValue === 1){
+    setTimeout( function() {  
+
     for(let i = 27; i < 30; i+=2){
       //no image index is 29
       imageIndex = i
-    }}
+    }  }, 2000)}
+
 
 
 
@@ -640,40 +672,53 @@ if (imageIndex === 2) {
     , 2000)}
 
    
+    // if(imageIndex === 43 && buttonValue === 1){
+    //   setTimeout( function() {  
+
+    //   for(let i = 43; i < 46; i+=2){
+    //     imageIndex = i
+    //   }
+    // }
+    // , 2000)}
+
+
+    // if(imageIndex === 43 && buttontwoValue === 1){
+    //   setTimeout( function() {  
+    //     for(let i = 43; i < 45; i+=2){
+    //     imageIndex = i
+    //   }
+    // }
+    // , 2000)}
+
     if(imageIndex === 43 && buttonValue === 1){
       setTimeout( function() {  
-
-      for(let i = 43; i < 46; i+=2){
-        imageIndex = i
-      }
-    }
-    , 2000)}
+        capture = createCapture(VIDEO);
+        capture.size(350, 350)
+        image(capture, 1050, 350, 350, 350);} 
+      , 2000)}
 
 
     if(imageIndex === 43 && buttontwoValue === 1){
       setTimeout( function() {  
-        for(let i = 43; i < 45; i+=2){
-        imageIndex = i
-      }
-    }
-    , 2000)}
-
-
-
-    if(imageIndex === 44 && buttonValue === 1){
-      setTimeout( function() {  
         capture = createCapture(VIDEO);
         capture.size(350, 350)
         image(capture, 1050, 350, 350, 350);} 
       , 2000)}
 
+    // if(imageIndex === 44 && buttonValue === 1){
+    //   setTimeout( function() {  
+    //     capture = createCapture(VIDEO);
+    //     capture.size(350, 350)
+    //     image(capture, 1050, 350, 350, 350);} 
+    //   , 2000)}
 
-    if(imageIndex === 44 && buttontwoValue === 1){
-      setTimeout( function() {  
-        capture = createCapture(VIDEO);
-        capture.size(350, 350)
-        image(capture, 1050, 350, 350, 350);} 
-      , 2000)}
+
+    // if(imageIndex === 44 && buttontwoValue === 1){
+    //   setTimeout( function() {  
+    //     capture = createCapture(VIDEO);
+    //     capture.size(350, 350)
+    //     image(capture, 1050, 350, 350, 350);} 
+    //   , 2000)}
 
 
  
