@@ -191,9 +191,6 @@ if (imageIndex === 2) {
     for(let i = 7; i < 9; i++){
       imageIndex = i
     }
-    fill(photoValue, 100, 100)
-    noStroke()
-    ellipse(1050, 450, 350)
    }
 
    if (imageIndex === 7) {
@@ -220,13 +217,11 @@ if (imageIndex === 2) {
     ellipse(1050, 450, 350)
    }
 
+   //we are at imageindex 11
    if (imageIndex === 10 && buttonValue === 1) {
     for(let i = 10; i < 12; i++){
       imageIndex = i
     }
-    fill(photoValue, 100, 100)
-    noStroke()
-    ellipse(1050, 450, 350)
    }
 
    if (imageIndex === 10) {
@@ -234,6 +229,32 @@ if (imageIndex === 2) {
     noStroke()
     ellipse(1050, 450, 350)
    }
+
+   //picking back up here
+   if (imageIndex === 11) {
+    setTimeout( function() {for(let i = 11; i < 13; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+  
+   if (imageIndex === 12) {
+    setTimeout( function() {for(let i = 12; i < 14; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if (imageIndex === 13) {
+    setTimeout( function() {for(let i = 13; i < 15; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+  
+   if (imageIndex === 14 && buttonValue === 1) {
+    for(let i = 14; i < 16; i++){
+      imageIndex = i
+    }
+   } 
+
 
 }
 
