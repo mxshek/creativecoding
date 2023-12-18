@@ -20,7 +20,7 @@ let bg = [0, 0, 0];
 
 let images;
 //can set number to test specific portions
-let imageIndex = 27;
+let imageIndex = 34;
 let auraArray;
 let selection;
 
@@ -147,14 +147,8 @@ function setup() {
 
 }
 
-
 //ESTABLISH BUTTON is YES
 //BUTTONTWO is NO
-
-
-
-
-
 
 function draw() {
   background(bg)
@@ -163,10 +157,10 @@ function draw() {
  image (images[imageIndex], 0, 0)
 
 
-
-
  if (imageIndex === 0 && frameCount > 300) {
-  imageIndex = 1
+  for (let i = 0; i < 2; i++ ){
+    imageIndex = i
+  }
  }
 
 
@@ -221,14 +215,12 @@ if (imageIndex === 2) {
     }
    }
 
-
    if (imageIndex === 7) {
     fill(photoValue, 100, 100)
     noStroke()
     ellipse(1050, 450, 300)
    }
-
-
+   
    if (imageIndex === 8) {
     setTimeout( function() {for(let i = 8; i < 10; i++){
       imageIndex = i
@@ -422,33 +414,52 @@ if (imageIndex === 2) {
       imageIndex = i
     }}
 
-  // if(imageIndex === 28 && buttonValue === 1){
-  //   for(let i = 28; i < 30; i++){
-  //     imageIndex = i + 5
-  //   }
-  // }
 
-  // if(imageIndex === 29 && buttonValue === 1){
-  //   for(let i = 29; i < 31; i++){
-  //     imageIndex = i + 4
-  //   }
-  // }
 
-  // if(imageIndex === 34){
-  //   setTimeout( function() {for(let i = 34; i < 36; i++){
-  //     imageIndex = i
-  //   }}, 2000)
-  //  }
+    //go to ...
+  if(imageIndex === 28 && buttonValue === 1){
+    for(let i = 28; i < 35; i+=6){
+      imageIndex = i
+    }
+  }
 
-  //  if(imageIndex === 35 && buttonValue === 1){
-  //   for(let i = 35; i < 37; i++){
-  //     imageIndex = i;
-  //   }
-  //  }
+  if(imageIndex === 29 && buttonValue === 1){
+    for(let i = 29; i < 35; i+=5){
+      imageIndex = i 
+    }
+  }
+
+  if(imageIndex === 34){
+    setTimeout( function() {for(let i = 34; i < 36; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if ( buttonValue === 1 && imageIndex === 35 ) {
+    setTimeout( function(){
+    for(let i = 35; i < 37; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+    if (imageIndex === 36) {      
+        if (buttonValue === 1){
+        setTimeout( function() {
+        for(let i = 36; i < 39; i+=2){
+          imageIndex = i
+      }}, 2000)}
+
+      if (buttontwoValue === 1){
+        setTimeout( function() {
+        for(let i = 36; i < 38; i++){
+          imageIndex = i}
+      }, 2000)
+    }}
+  
 
   //  if(imageIndex === 36 && buttonValue === 1){
-  //   for(let i = 36; i < 38; i++){
-  //     imageIndex = i + 1
+  //   for(let i = 36; i < 39; i+=2){
+  //     imageIndex = i
   //   }
   //  }
 
@@ -458,221 +469,158 @@ if (imageIndex === 2) {
   //   }
   //  }
    
-  //  if(imageIndex === 37 && buttonValue === 1){
-  //   for(let i = 37; i < 39; i++){
-  //     imageIndex = i
-  //   }
-  //  }
+   if(imageIndex === 37 && buttonValue === 1){
+    setTimeout( function() {  
+    for(let i = 37; i < 39; i++){
+      imageIndex = i}}
+    , 2000)}
 
-  //  if(imageIndex === 38 && buttonValue === 1){
-  //   for(let i = 38; i < 40; i++){
-  //     imageIndex = i
-  //   }  }
+
+   if(imageIndex === 38 && buttonValue === 1){
+    setTimeout( function() {  
+    for(let i = 38; i < 40; i++){
+      imageIndex = i
+    }  }, 2000)}
 
   
-  //   if(imageIndex === 39 && buttonValue === 1){
-  //     for(let i = 39; i < 41; i++){
-  //       imageIndex = i
-  //     }
-  //   }
+    if(imageIndex === 39 && buttonValue === 1){
+      setTimeout( function() {  
+      for(let i = 39; i < 41; i++){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
-  //   if(imageIndex === 39 && buttontwoValue === 1){
-  //     for(let i = 39; i < 41; i++){
-  //       imageIndex = i
-  //     }
-  //   }
+    if(imageIndex === 39 && buttontwoValue === 1){
+      setTimeout( function() {  
 
-  //   if(imageIndex === 40 && buttonValue === 1){
-  //     for(let i = 40; i < 42; i++){
-  //       imageIndex = i
-  //     }
-  //   }
+      for(let i = 39; i < 41; i++){
+        imageIndex = i
+      }
+    }    , 2000)}
 
-  //   if(imageIndex === 40 && buttontwoValue === 1){
-  //     for(let i = 40; i < 42; i++){
-  //       imageIndex = i + 1
-  //     }
-  //   }
 
-  //   if(imageIndex === 41 && buttonValue === 1){
-  //     for(let i = 41; i < 43; i++){
-  //       imageIndex = i + 1
-  //     }
-  //   }
+    if(imageIndex === 40 && buttonValue === 1){
+      setTimeout( function() {  
+      for(let i = 40; i < 42; i++){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
-  //   if(imageIndex === 41 && buttontwoValue === 1){
-  //     for(let i = 41; i < 43; i++){
-  //       imageIndex = i + 2
-  //     }
-  //   }
+    if(imageIndex === 40 && buttontwoValue === 1){
+      setTimeout( function() {  
 
-  //   if(imageIndex === 42 && buttonValue === 1){
-  //     for(let i = 42; i < 44; i++){
-  //       imageIndex = i
-  //     }
-  //   }
+      for(let i = 40; i < 43; i+=2){
+        imageIndex = i
+      }
+    }    , 2000)}
 
-  //   if(imageIndex === 42 && buttontwoValue === 1){
-  //     for(let i = 42; i < 44; i++){
-  //       imageIndex = i + 1
-  //     }
-  //   }
+    if(imageIndex === 41 && buttonValue === 1){
+      setTimeout( function() {  
+
+      for(let i = 41; i < 44; i+=2){
+        imageIndex = i
+      }
+    }
+    , 2000)}
+
+
+
+    if(imageIndex === 41 && buttontwoValue === 1){
+      setTimeout( function() {  
+
+      for(let i = 41; i < 45; i+=3){
+        imageIndex = i
+      }
+    }
+    , 2000)}
+
+    if(imageIndex === 42 && buttonValue === 1){
+      setTimeout( function() {  
+      for(let i = 42; i < 44; i++){
+        imageIndex = i
+      }
+    }
+    , 2000)}
+
+
+    if(imageIndex === 42 && buttontwoValue === 1){
+      setTimeout( function() {  
+      for(let i = 42; i < 45; i+=2){
+        imageIndex = i + 1
+      }
+    }
+    , 2000)}
+
    
-  //   if(imageIndex === 43 && buttonValue === 1){
-  //     for(let i = 43; i < 45; i++){
-  //       imageIndex = i + 1
-  //     }
-  //   }
+    if(imageIndex === 43 && buttonValue === 1){
+      setTimeout( function() {  
 
-  //   if(imageIndex === 43 && buttontwoValue === 1){
-  //     for(let i = 43; i < 45; i++){
-  //       imageIndex = i + 2
-  //     }
-  //   }
-
-  //   if(imageIndex === 44 && buttonValue === 1){
-  //     for(let i = 44; i < 46; i++){
-  //       imageIndex = i
-  //     }
-  //   }
-
-  //   if(imageIndex === 44 && buttontwoValue === 1){
-  //     for(let i = 44; i < 46; i++){
-  //       imageIndex = i
-  //     }
-  //   }
-
-  //   if(imageIndex === 46 && buttonValue === 1){
-  //     capture = createCapture(VIDEO);
-  //     capture.size(350, 350)
-  //     image(capture, 1050, 350, 350, 350);
-  //     }
-
-  //   if(imageIndex === 46 && buttontwoValue === 1){
-  //     capture = createCapture(VIDEO);
-  //     capture.size(350, 350)
-  //     image(capture, 1050, 350, 350, 350);
-  //     }
-  
-  
-//THIS WASNT WORKING
-  //  if(imageIndex === 28 && buttonValue === 1){
-  //   if (daynight === 0){
-  //     for(let i = 0; i < 2; i++){
-  //       imageIndex = 31
-  //     }
-  //   } else{
-  //     for(let i = 0; i < 2; i++){
-  //       imageIndex = 30
-  //     }
-  //   }}
-  //   for(let i = 30; i < 32; i++){
-  //     imageIndex = i
-  //   }
-  //  }
+      for(let i = 43; i < 46; i+=2){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
 
-  //  if(imageIndex === 29 && buttonValue === 1){
-  //   for(let i = 30; i < 32; i++){
-  //     imageIndex = i
-  //   }
-  //  }
+    if(imageIndex === 43 && buttontwoValue === 1){
+      setTimeout( function() {  
+        for(let i = 43; i < 45; i+=2){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
 
-//STARTING WEATHER PORTION
 
-//   if (daynight === 0){
-//   if(imageIndex === 28 && buttonValue === 1){
-//     for(let i = 0; i < 2; i++){
-//       imageIndex = 31
-//      }}
+    if(imageIndex === 44 && buttonValue === 1){
+      setTimeout( function() {  
 
-
-//      if(imageIndex === 29 && buttonValue === 1){
-//       for(let i = 0; i < 2; i++){
-//         imageIndex = 31
-//        }}
-// } else{
-//   if(imageIndex === 28 && buttonValue === 1){
-//     for(let i = 0; i < 2; i++){
-//       imageIndex = 30
-//      }}
+      for(let i = 44; i < 46; i++){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
 
-//      if(imageIndex === 29 && buttonValue === 1){
-//       for(let i = 0; i < 2; i++){
-//         imageIndex = 30
-//        }}}
+    if(imageIndex === 44 && buttontwoValue === 1){
+      setTimeout( function() {  
+
+      for(let i = 44; i < 46; i++){
+        imageIndex = i
+      }
+    }
+    , 2000)}
+
+    while(imageIndex === 45){
+        capture = createCapture(VIDEO);
+        capture.size(350, 350)
+        image(capture, 1050, 350, 350, 350);
+    } 
+    
+    // while(imageIndex === 45){
+    //   if(buttonValue === 1){
+    //     setTimeout( function() {
+    //     capture = createCapture(VIDEO);
+    //     capture.size(350, 350)
+    //     image(capture, 1050, 350, 350, 350);
+    //   }, 2000)} 
+    //   else if(buttontwoValue === 1) {   
+    //     setTimeout( function() {     
+    //     capture = createCapture(VIDEO);
+    //     capture.size(350, 350)
+    //     image(capture, 1050, 350, 350, 350);
+    //   }, 2000)}
+    // } 
 
 
-//    if(imageIndex === 30){
-//     fill (0, 0, 0)
-//     textAlign(CENTER)
-//     textSize (72)
-//     text(currentTemp, 700, 484)
-//   }
+     
+      
 
+    }
+  // }
 
-//   if(imageIndex === 31){
-//     fill (0, 0, 0)
-//     textAlign(CENTER)
-//     textSize (72)
-//     text(currentTemp, 700, 484)
-//   }
-
-
- //TRIED DEBUGGING BUT DONT UNDERSTAND WHY IT IS SKIPPING
-// will finish coding conversation and come back if i can
-
-
-//  if(imageIndex === 30 && buttonValue === 1){
-//   for(let i = 30; i < 32; i++){
-//     imageIndex = i + 1
-//   }
-//  }
- 
-//   if(imageIndex === 31 && buttonValue === 1){
-//     for(let i = 31; i < 33; i++){
-//       imageIndex = i
-//     }
-//    }
-
-
-//    if(imageIndex === 32 && buttonValue === 1){
-//     for(let i = 32; i < 34; i++){
-//       imageIndex = i
-//     }
-//    }
-
-
-//    if(imageIndex === 32 && buttontwoValue === 1){
-//     for(let i = 32; i < 34; i++){
-//       imageIndex = i
-//     }
-//    }
-
-
-//    if(imageIndex === 33 && buttonValue === 1){
-//     for(let i = 33; i < 35; i++){
-//       imageIndex = i
-//     }
-//    }
-
-
-//    if(imageIndex === 34){
-//     setTimeout(function() {for(let i = 34; i < 36; i++){
-//       imageIndex = i
-//     }}, 2000)
-//    }
-   
-  //  if( imageIndex === 35 && buttonValue === 1){
-  //   for(let i = 35; i < 37; i++){
-  //     imageIndex = i
-  //   }
-  //  }
-
-
-  }
 
 
 
@@ -681,7 +629,6 @@ function connectToBLE() {
   myBLE.connect(serviceUuid, gotCharacteristics)
 }
 
-
 function gotCharacteristics(error, characteristics) {
   if (error) console.error(error)
   // console.log("characteristics: ", characteristics)
@@ -689,20 +636,15 @@ function gotCharacteristics(error, characteristics) {
  
   console.log("Characteristics: ", characteristics)
 
-
   //check console of sketch and then double check arduino which uuid is which
   buttonCharacteristic = characteristics[0]
   myBLE.read(buttonCharacteristic, gotButtonValue)
 
-
   buttontwoCharacteristic = characteristics[1]
   myBLE.read(buttontwoCharacteristic, gotbuttontwoValue)
 
-
   photoCharacteristic = characteristics[2]
   myBLE.read(photoCharacteristic, gotPhotoValue)
-
-
 }
 
 
@@ -742,16 +684,13 @@ async function apiRequest() {
     let data = await request.json()
     console.log(data)
 
-
     let nowTemp = data.current
     console.log("the current values are:")
     console.log(nowTemp)
 
-
     currentTemp = nowTemp.temperature_2m
     console.log("the current temperature is ")
     console.log(currentTemp)
-
 
     daynight = nowTemp.is_day
     console.log("is it day")
