@@ -281,21 +281,53 @@ if (imageIndex === 2) {
 
    if (imageIndex === 14 && buttonValue === 1) {
     setTimeout( function() {  
-
     // from here we have to randomly select an aura
     // must randomly route to 15, 18, 20, 22, 24, or 26
     for(let i = 0; i < 2; i++){
     let auraArray = [15, 18, 20, 22, 24, 26]
     let selection = random(auraArray)
     imageIndex = selection
-  }}, 2000)}
+  }
+  if (imageIndex === 15) {
+    {for(let i = 15; i < 17; i++){
+      imageIndex = i}
+    }
+  }
+
+   if (imageIndex === 18) {
+    for(let i = 18; i < 20; i++){
+      imageIndex = i
+    }
+   }
+   if (imageIndex === 20) {
+    for(let i = 20; i < 22; i++){
+      imageIndex = i
+    }
+   }
+   if (imageIndex === 22) {
+    for(let i = 22; i < 24; i++){
+      imageIndex = i
+    }
+   }
+   if (imageIndex === 24) {
+    for(let i = 24; i < 26; i++){
+      imageIndex = i
+    }
+   }
+   if (imageIndex === 26) {
+    for(let i = 26; i < 28; i++){
+      imageIndex = i
+    }
+   }
+
+}, 2000)}
 
    //IF RED
-   if (imageIndex === 15) {
-    setTimeout( function() {for(let i = 15; i < 17; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 15) {
+  //   setTimeout( function() {for(let i = 15; i < 17; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
 
    if(imageIndex === 16 && buttonValue === 1){
     setTimeout( function() {  
@@ -316,11 +348,11 @@ if (imageIndex === 2) {
 
 
    //IF ORANGE
-   if (imageIndex === 18) {
-    setTimeout( function() {for(let i = 18; i < 20; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 18) {
+  //   setTimeout( function() {for(let i = 18; i < 20; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
 
    if(imageIndex === 19 && buttonValue === 1){
     setTimeout( function() {  
@@ -343,11 +375,11 @@ if (imageIndex === 2) {
 
 
    //IF YELLOW
-   if (imageIndex === 20) {
-    setTimeout( function() {for(let i = 20; i < 22; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 20) {
+  //   setTimeout( function() {for(let i = 20; i < 22; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
    
 
    if(imageIndex === 21 && buttonValue === 1){
@@ -372,11 +404,11 @@ if (imageIndex === 2) {
 
 
    //IF GREEN
-   if (imageIndex === 22) {
-    setTimeout( function() {for(let i = 22; i < 24; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 22) {
+  //   setTimeout( function() {for(let i = 22; i < 24; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
 
    if(imageIndex === 23 && buttonValue === 1){
     setTimeout( function() {  
@@ -396,11 +428,11 @@ if (imageIndex === 2) {
   }, 2000)}
 
    //IF BLUE
-   if (imageIndex === 24) {
-    setTimeout( function() {for(let i = 24; i < 26; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 24) {
+  //   setTimeout( function() {for(let i = 24; i < 26; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
 
    if(imageIndex === 25 && buttonValue === 1){
     setTimeout( function() {  
@@ -422,11 +454,11 @@ if (imageIndex === 2) {
 
 
    //IF PURPLE
-   if (imageIndex === 26) {
-    setTimeout( function() {for(let i = 26; i < 28; i++){
-      imageIndex = i
-    }}, 2000)
-   }
+  //  if (imageIndex === 26) {
+  //   setTimeout( function() {for(let i = 26; i < 28; i++){
+  //     imageIndex = i
+  //   }}, 2000)
+  //  }
 
    if(imageIndex === 27 && buttonValue === 1){
     setTimeout( function() {  
@@ -643,12 +675,10 @@ if (imageIndex === 2) {
     }
     , 2000)}
 
-
-
     if(imageIndex === 41 && buttontwoValue === 1){
       setTimeout( function() {  
 
-      for(let i = 41; i < 45; i+=3){
+      for(let i = 41; i < 46; i+=3){
         imageIndex = i
       }
     }
@@ -672,72 +702,55 @@ if (imageIndex === 2) {
     , 2000)}
 
    
-    // if(imageIndex === 43 && buttonValue === 1){
-    //   setTimeout( function() {  
-
-    //   for(let i = 43; i < 46; i+=2){
-    //     imageIndex = i
-    //   }
-    // }
-    // , 2000)}
-
-
-    // if(imageIndex === 43 && buttontwoValue === 1){
-    //   setTimeout( function() {  
-    //     for(let i = 43; i < 45; i+=2){
-    //     imageIndex = i
-    //   }
-    // }
-    // , 2000)}
-
     if(imageIndex === 43 && buttonValue === 1){
       setTimeout( function() {  
-        capture = createCapture(VIDEO);
-        capture.size(350, 350)
-        image(capture, 1050, 350, 350, 350);} 
-      , 2000)}
+
+      for(let i = 43; i < 46; i+=2){
+        imageIndex = i
+      }
+    }
+    , 2000)}
 
 
     if(imageIndex === 43 && buttontwoValue === 1){
       setTimeout( function() {  
-        capture = createCapture(VIDEO);
-        capture.size(350, 350)
-        image(capture, 1050, 350, 350, 350);} 
+        for(let i = 43; i < 46; i+=2){
+        imageIndex = i
+      }
+    }
+    , 2000)}
+
+
+    if(imageIndex === 44 && buttonValue === 1){
+      setTimeout( function() {  
+        for (let i = 44; i < 46; i++){
+          imageIndex = i
+        }}
       , 2000)}
 
-    // if(imageIndex === 44 && buttonValue === 1){
-    //   setTimeout( function() {  
-    //     capture = createCapture(VIDEO);
-    //     capture.size(350, 350)
-    //     image(capture, 1050, 350, 350, 350);} 
-    //   , 2000)}
+
+    if(imageIndex === 44 && buttontwoValue === 1){
+      setTimeout( function() {  
+        for (let i = 44; i < 46; i++){
+          imageIndex = i
+        }}
+      , 2000)}
 
 
-    // if(imageIndex === 44 && buttontwoValue === 1){
-    //   setTimeout( function() {  
-    //     capture = createCapture(VIDEO);
-    //     capture.size(350, 350)
-    //     image(capture, 1050, 350, 350, 350);} 
-    //   , 2000)}
-
-
- 
-  
-
-    // while(imageIndex === 45){
-    //   if(buttonValue === 1){
-    //     setTimeout( function() {
-    //     capture = createCapture(VIDEO);
-    //     capture.size(350, 350)
-    //     image(capture, 1050, 350, 350, 350);
-    //   }, 2000)} 
-    //   else if(buttontwoValue === 1) {   
-    //     setTimeout( function() {     
-    //     capture = createCapture(VIDEO);
-    //     capture.size(350, 350)
-    //     image(capture, 1050, 350, 350, 350);
-    //   }, 2000)}
-    // } 
+    if(imageIndex === 45){
+      if(buttonValue === 1){
+        setTimeout( function() {
+        capture = createCapture(VIDEO);
+        capture.size(350, 350)
+        image(capture, 1050, 350)
+      }, 2000)} 
+      else if(buttontwoValue === 1) {   
+        setTimeout( function() {     
+        capture = createCapture(VIDEO);
+        capture.size(350, 350)
+        image(capture, 1050, 350);
+      }, 2000)}
+    } 
 
 
      
