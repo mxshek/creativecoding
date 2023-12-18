@@ -16,8 +16,10 @@ let currentTemp;
 let bg = [0, 0, 0];
 
 let images;
-let imageIndex = 0;
-
+//can set number to test specific portions
+let imageIndex = 13;
+let auraArray;
+let selection;
 
 function preload(){
   images = [
@@ -56,6 +58,7 @@ function preload(){
     // red did i get that right
     loadImage('convo/Untitled_Artwork-17.png'),
     //REMOVED 18, NUMBER IN ARRAY IS NOW -2
+    loadImage('convo/Untitled_Artwork-18.png'),
     // orange aura
     loadImage('convo/Untitled_Artwork-19.png'),
     // orange aura right?
@@ -141,7 +144,6 @@ function draw() {
  
   console.log(imageIndex)
  image (images[imageIndex], 0, 0)
-
 
 
  if (imageIndex === 0 && frameCount > 300) {
@@ -248,12 +250,141 @@ if (imageIndex === 2) {
       imageIndex = i
     }}, 2000)
    }
-  
+
    if (imageIndex === 14 && buttonValue === 1) {
-    for(let i = 14; i < 16; i++){
+    // from here we have to randomly select an aura
+    // must randomly route to 15, 18, 20, 22, 24, or 26
+    for(let i = 0; i < 2; i++){
+    let auraArray = [15, 18, 20, 22, 24, 26]
+    let selection = random(auraArray)
+    imageIndex = selection
+   }}
+
+   //IF RED
+   if (imageIndex === 15) {
+    setTimeout( function() {for(let i = 15; i < 17; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 16 && buttonValue === 1){
+    for(let i = 16; i < 18; i++){
+      //yes image index is 28
+      imageIndex = i + 11
+    }
+   }
+
+   if(imageIndex === 16 && buttontwoValue === 1){
+    for(let i = 16; i < 18; i++){
+      //no image index is 29
+      imageIndex = i + 12
+    }
+   }
+
+   //IF ORANGE
+   if (imageIndex === 18) {
+    setTimeout( function() {for(let i = 18; i < 20; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 19 && buttonValue === 1){
+    for(let i = 19; i < 21; i++){
+      //yes image index is 28
+      imageIndex = i + 8
+    }
+   }
+
+   if(imageIndex === 19 && buttontwoValue === 1){
+    for(let i = 19; i < 21; i++){
+      //no image index is 29
+      imageIndex = i + 9
+    }
+   }
+
+   //IF YELLOW
+   if (imageIndex === 20) {
+    setTimeout( function() {for(let i = 20; i < 22; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 21 && buttonValue === 1){
+    for(let i = 21; i < 23; i++){
+      //yes image index is 28
+      imageIndex = i + 6
+    }
+   }
+
+   if(imageIndex === 21 && buttontwoValue === 1){
+    for(let i = 21; i < 23; i++){
+      //no image index is 29
+      imageIndex = i + 7
+    }
+   }
+
+   //IF GREEN
+   if (imageIndex === 22) {
+    setTimeout( function() {for(let i = 22; i < 24; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 23 && buttonValue === 1){
+    for(let i = 23; i < 25; i++){
+      //yes image index is 28
+      imageIndex = i + 4
+    }
+   }
+
+   if(imageIndex === 23 && buttontwoValue === 1){
+    for(let i = 23; i < 25; i++){
+      //no image index is 29
+      imageIndex = i + 5
+    }
+   }
+
+   //IF BLUE
+   if (imageIndex === 24) {
+    setTimeout( function() {for(let i = 24; i < 26; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 25 && buttonValue === 1){
+    for(let i = 25; i < 27; i++){
+      //yes image index is 28
+      imageIndex = i + 2
+    }
+   }
+
+   if(imageIndex === 25 && buttontwoValue === 1){
+    for(let i = 25; i < 27; i++){
+      //no image index is 29
+      imageIndex = i + 3
+    }
+   }
+
+   //IF PURPLE
+   if (imageIndex === 26) {
+    setTimeout( function() {for(let i = 26; i < 28; i++){
+      imageIndex = i
+    }}, 2000)
+   }
+
+   if(imageIndex === 27 && buttonValue === 1){
+    for(let i = 27; i < 29; i++){
+      //yes image index is 28
       imageIndex = i
     }
-   } 
+   }
+
+   if(imageIndex === 27 && buttontwoValue === 1){
+    for(let i = 27; i < 29; i++){
+      //no image index is 29
+      imageIndex = i + 1
+    }
+   }
 
 
 }
