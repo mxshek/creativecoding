@@ -139,22 +139,101 @@ function setup() {
 function draw() {
   background(bg)
  
-
+  console.log(imageIndex)
  image (images[imageIndex], 0, 0)
+
+
+
  if (imageIndex === 0 && frameCount > 300) {
   imageIndex = 1
  }
 
- if (buttonValue === 1){
+ if (imageIndex === 1 && buttonValue === 1){
   for (let i = 1; i < 3; i++ ){
     imageIndex = i
-    console.log("test")
-    console.log(buttonValue)
   }
  }
 
+//TRANSITION TO 3
+if (imageIndex === 2) {
+    setTimeout( function() {for(let i = 2; i < 4; i++){
+      imageIndex = i
+    }}, 2000)
+   }
 
+   if (imageIndex === 3) {
+    setTimeout( function() {for(let i = 3; i < 5; i++){
+      imageIndex = i
+    }}, 2000)
+   }
 
+   if (imageIndex === 4 && buttonValue === 1) {
+    for(let i = 4; i < 6; i++){
+      imageIndex = i
+    }
+   } 
+
+   if (imageIndex === 5) {
+    setTimeout( function() {for (let i = 5; i < 7; i++ ){
+      imageIndex = i
+   }}, 2000)}
+
+   if (imageIndex === 6) {
+    setTimeout( function() {for(let i = 6; i < 8; i++){
+      imageIndex = i
+    }}, 2000)
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 7 && buttonValue === 1) {
+    for(let i = 7; i < 9; i++){
+      imageIndex = i
+    }
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 7) {
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 8) {
+    setTimeout( function() {for(let i = 8; i < 10; i++){
+      imageIndex = i
+    }}, 2000)
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 9) {
+    setTimeout( function() {for(let i = 9; i < 11; i++){
+      imageIndex = i
+    }}, 2000)
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 10 && buttonValue === 1) {
+    for(let i = 10; i < 12; i++){
+      imageIndex = i
+    }
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
+
+   if (imageIndex === 10) {
+    fill(photoValue, 100, 100)
+    noStroke()
+    ellipse(1050, 450, 350)
+   }
 
 }
 
